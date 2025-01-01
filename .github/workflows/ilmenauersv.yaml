@@ -1,4 +1,4 @@
-name: Deploy Ilmenauer Schachverein
+name: Deploy IlmenauerSV
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
 
       - name: Build Hugo site
         run: |
-          sed -i 's/GHNT7TZVBZ/WWS5KM7BNV/g' hugo.yml
+          sed -i 's/GHNT7TZVBZ/WWS5KM7BNV/g' hugo.yaml
           hugo mod get
           hugo mod tidy
           hugo
