@@ -1,7 +1,7 @@
 ---
 title: ELO Auswertung
 type: docs
-prev: tabellen/docs/
+slug: 2025-elo
 toc: false
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Spezialtabellen
 type: docs
-prev: tabellen/docs/
 toc: false
+slug: 2025-Spezialtabellen
 ---
 
 {{< cards >}}
