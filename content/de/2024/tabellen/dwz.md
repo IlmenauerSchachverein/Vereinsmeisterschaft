@@ -1,7 +1,8 @@
 ---
 title: DWZ Auswertung
 type: docs
-prev: tabellen
+toc: false
+slug: 2024-DWZ-Auswertung
 ---
 
 | Nr. | Teilnehmer         | Ro   | Niv. | W   | We   | n | E  | /  | Rh   | Rn   | Diff. |

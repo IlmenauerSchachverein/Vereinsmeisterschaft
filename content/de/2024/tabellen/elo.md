@@ -1,8 +1,8 @@
 ---
 title: ELO Auswertung
 type: docs
-prev: tabellen/docs/
 toc: false
+slug: 2024-ELO-Auswertung
 ---
 
 | Nr. | Teilnehmer             | Land | Ro   | Niv. | W   | We   | n   | Rp   | Rn   | Diff./K  |
