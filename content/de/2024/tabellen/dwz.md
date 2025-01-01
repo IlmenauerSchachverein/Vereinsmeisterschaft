@@ -2,7 +2,6 @@
 title: DWZ Auswertung
 type: docs
 prev: tabellen
-breadcrumbs: false
 toc: false
 ---
 
