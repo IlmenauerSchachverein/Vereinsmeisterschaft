@@ -5,8 +5,6 @@ weight: 2
 toc: false
 ---
 
-# Datenschutzerklärung
-
 ## Verantwortlicher Seitenbetreiber
 
 **Ilmenauer Schachverein e.V.**  
