@@ -35,6 +35,7 @@ jobs:
 
       - name: Build Hugo site
         run: |
+          sed -i 's/https://vm25.ilmenauer-schachverein.de/https://ilmenauersv.de/vm/g' hugo.yaml
           sed -i 's/GHNT7TZVBZ/WWS5KM7BNV/g' hugo.yaml
           hugo mod get
           hugo mod tidy
