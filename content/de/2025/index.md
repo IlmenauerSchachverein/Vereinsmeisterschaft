@@ -15,9 +15,6 @@ Paarungen und Ranglisten gibt es auf Chess-Results und FindChessGame:
 
 
 
-
-
-
 ## Wichtige Informationen 
 {{< cards >}}
   {{< card link="ausschreibung" title="Ausschreibung" icon="user" >}}
