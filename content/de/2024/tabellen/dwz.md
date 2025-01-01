@@ -2,10 +2,6 @@
 title: DWZ Auswertung
 type: docs
 prev: tabellen
-breadcrumbs: false
-toc: false
-sidebar:
-  exclude: true
 ---
 
 | Nr. | Teilnehmer         | Ro   | Niv. | W   | We   | n | E  | /  | Rh   | Rn   | Diff. |
