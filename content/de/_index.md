@@ -7,7 +7,7 @@ type: docs
 ## 2025
 {{< cards >}}
 {{< card link="https://chess-results.com/tnr1058956.aspx?lan=0" title="Chess-Results" icon="user" >}}
-{{< card link="2025/runden" title="Runden" icon="user" >}}
+{{< card link="2025/runde" title="Runden" icon="user" >}}
 {{< card link="2025/ranglisten" title="Rangliste" icon="user" >}}
 {{< card link="2025/tabellen" title="Tabellen" icon="user" >}}
 {{< card link="2025/ausschreibung" title="Ausschreibung" icon="user" >}}
@@ -16,7 +16,7 @@ type: docs
 ## 2024
 {{< cards >}}
 {{< card link="https://chess-results.com/tnr838334.aspx?lan=0" title="Chess-Results" icon="user" >}}
-{{< card link="2024/runden" title="Runden" icon="user" >}}
+{{< card link="2024/runde" title="Runden" icon="user" >}}
 {{< card link="2024/ranglisten" title="Rangliste" icon="user" >}}
 {{< card link="2024/tabellen" title="Tabellen" icon="user" >}}
 {{< /cards >}}
@@ -24,7 +24,7 @@ type: docs
 ## 2023
 {{< cards >}}
 {{< card link="https://archive.chess-results.com/tnr786214.aspx?lan=0" title="Chess-Results" icon="user" >}}
-{{< card link="2023/runden" title="Runden" icon="user" >}}
+{{< card link="2023/runde" title="Runden" icon="user" >}}
 {{< card link="2023/ranglisten" title="Rangliste" icon="user" >}}
 {{< card link="2023/tabellen" title="Tabellen" icon="user" >}}
 {{< /cards >}}
