@@ -1,5 +1,5 @@
 ---
-title: Vereinsmeisterschaft 2024
+title: Vereinsmeisterschaft 2023
 toc: false
 type: docs
 ---
