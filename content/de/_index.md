@@ -10,6 +10,7 @@ type: docs
 {{< card link="2025/runden" title="Runden" icon="user" >}}
 {{< card link="2025/ranglisten" title="Rangliste" icon="user" >}}
 {{< card link="2025/tabellen" title="Tabellen" icon="user" >}}
+{{< card link="2025/ausschreibung" title="Ausschreibung" icon="user" >}}
 {{< /cards >}}
 
 ## 2024
