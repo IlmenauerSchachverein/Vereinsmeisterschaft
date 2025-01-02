@@ -1,6 +1,7 @@
 ---
 title: Impressum    
-type: Impressum
+type: docs
+slug: impressum
 ---
 
 # Impressum
