@@ -4,8 +4,6 @@ type: docs
 toc: true
 ---
 
-## Paarungen aller Runden
-
 {{< cards >}}
 {{< card link="1" title="Paarungen Runde 1" icon="user" >}}
 {{< card link="2" title="Paarungen Runde 2" icon="user" >}}

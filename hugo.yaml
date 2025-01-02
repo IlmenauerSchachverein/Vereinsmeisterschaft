@@ -1,4 +1,4 @@
-title: Ilmenauer Vereinsmeisterschaft 
+title: Ilmenauer Vereinsmeisterschaft
 baseURL: "https://vm.ilmenauer-schachverein.de"
 defaultContentLanguage: de
 
@@ -22,7 +22,7 @@ languages:
   de:
     languageName: German
     weight: 1
-    title: Vereinsmeisterschaft 
+    title: Vereinsmeisterschaft
     contentDir: "content/de"
 
 menu:
