@@ -22,6 +22,11 @@ type: docs
 {{< /cards >}}
 
 ## 2023
+
+{{< callout type="error" >}}
+  Something went wrong and it's going to explode.
+{{< /callout >}}
+
 {{< cards >}}
 {{< card link="https://archive.chess-results.com/tnr786214.aspx?lan=0" title="Chess-Results" icon="user" >}}
 {{< card link="2023/runde" title="Runden" icon="user" >}}
