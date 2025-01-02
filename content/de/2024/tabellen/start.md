@@ -6,8 +6,7 @@ next: docs/folder/
 weight: 2
 toc: false
 ---
-
-## Startrangliste
+ 
 | TlnNr | Teilnehmer          | ELO  | NWZ  | Verein/Ort                | Land | Geburt | FideKenn. | PKZ      |
 |-------|---------------------|------|------|----------------------------|------|--------|-----------|----------|
 | 1     | Ziganshin, Ainur    | 1802 | 2198 | Ilmenauer SV               | RUS  | 1998   | 34111872  | 10776775 |

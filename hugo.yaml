@@ -30,17 +30,14 @@ menu:
     - name: Chess-Results
       url: "https://chess-results.com/tnr1058956.aspx?lan=0"
       weight: -100
-    - name: Runden
-      pageRef: /runde
-      weight: 1
-    - name: Rangliste
-      pageRef: /rangliste
-      weight: 1
     - name: About
       pageRef: /about
       weight: 3
     - name: Impressum
       pageRef: /imprint
+      weight: 3
+    - name: Datenschutzerklärung
+      pageRef: /datenschutzerklaerung
       weight: 3
     - name: Ilmenauer Schachverein ↗
       url: "https://ilmenauer-schachverein.de"
@@ -51,7 +48,7 @@ menu:
         type: search
     - name: GitHub
       weight: 6
-      url: "https://github.com/IlmenauerSchachverein/Vereinsmeisterschaft2025"
+      url: "https://github.com/IlmenauerSchachverein/Vereinsmeisterschaft"
       params:
         icon: github
     - name: Instagram
