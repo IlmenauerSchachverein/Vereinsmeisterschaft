@@ -8,7 +8,7 @@ type: docs
 
 {{< cards >}}
 {{< card link="invitation" title="Ausschreibung" icon="user" >}}
-{{< card link="start" title="Startrangliste" icon="user" >}}
+{{< card link="tabellen/start" title="Startrangliste" icon="user" >}}
 {{< /cards >}}
 
 ## Paarungen aller Runden
