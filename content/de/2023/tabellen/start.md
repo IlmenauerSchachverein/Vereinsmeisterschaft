@@ -1,5 +1,5 @@
 ---
-title: 2023 - Startrangliste   
+title: Startrangliste   
 type: docs
 toc: false
 ---

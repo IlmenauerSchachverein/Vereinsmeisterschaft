@@ -1,5 +1,5 @@
 ---
-title: Vereinsmeisterschaft des Ilmenauer Schachverein
+title: Vereinsmeisterschaft des Ilmenauer SV
 toc: false
 type: docs
 ---
