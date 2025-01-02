@@ -1,7 +1,8 @@
 ---
-title: Ranglisten 2023
+title: Ranglisten
 type: docs
 slug: 2023-ranglisten
+toc: false
 ---
 
 {{< cards >}}
