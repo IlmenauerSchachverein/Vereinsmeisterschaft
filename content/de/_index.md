@@ -20,7 +20,7 @@ Paarungen und Ranglisten gibt es auf Chess-Results und FindChessGame:
 {{< card link="https://chess-results.com/tnr838334.aspx?lan=0" title="Chess-Results" icon="user" >}}
 {{< card link="2024/runden" title="Runden" icon="user" >}}
 {{< card link="2024/ranglisten" title="Rangliste" icon="user" >}}
-{{< card link="2024/tabellen title="Tabellen" icon="user" >}}
+{{< card link="2024/tabellen" title="Tabellen" icon="user" >}}
 {{< /cards >}}
 
 ## 2023
@@ -28,5 +28,5 @@ Paarungen und Ranglisten gibt es auf Chess-Results und FindChessGame:
 {{< card link="https://archive.chess-results.com/tnr786214.aspx?lan=0" title="Chess-Results" icon="user" >}}
 {{< card link="2023/runden" title="Runden" icon="user" >}}
 {{< card link="2023/ranglisten" title="Rangliste" icon="user" >}}
-{{< card link="2023/tabellen title="Tabellen" icon="user" >}}
+{{< card link="2023/tabellen" title="Tabellen" icon="user" >}}
 {{< /cards >}}
