@@ -4,9 +4,7 @@ type: docs
 slug: impressum
 ---
 
-# Impressum
-
-**Verantwortlicher Seitenbetreiber:**
+## Verantwortlicher Seitenbetreiber
 
 Ilmenauer Schachverein e.V.  
 Vorsitzender: Markus Hartung  
