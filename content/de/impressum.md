@@ -2,6 +2,7 @@
 title: Impressum    
 type: docs
 slug: impressum
+toc: true
 ---
 
 ## Verantwortlicher Seitenbetreiber

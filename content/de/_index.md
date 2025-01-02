@@ -5,9 +5,6 @@ type: docs
 ---
 
 ## 2025
-
-Paarungen und Ranglisten gibt es auf Chess-Results und FindChessGame:
-
 {{< cards >}}
 {{< card link="https://chess-results.com/tnr1058956.aspx?lan=0" title="Chess-Results" icon="user" >}}
 {{< card link="2025/runden" title="Runden" icon="user" >}}

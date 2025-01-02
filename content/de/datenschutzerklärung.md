@@ -2,7 +2,7 @@
 title: Datenschutzerklärung 
 type: docs
 weight: 2
-toc: false
+toc: true
 ---
 
 ## Verantwortlicher Seitenbetreiber
