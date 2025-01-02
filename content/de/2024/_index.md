@@ -7,7 +7,7 @@ type: docs
 
 ## Wichtige Informationen 
 {{< cards >}}
-  {{< card link="start" title="Start Rangliste" icon="user" >}}
+  {{< card link="tabellen/start" title="Startrangliste" icon="user" >}}
 {{< /cards >}}
 ## Paarungen aller Runden 
 
