@@ -24,7 +24,7 @@ type: docs
 ## 2023
 
 {{< callout type="error" >}}
-  Something went wrong and it's going to explode.
+Die Vereinsmeisterschaft 2023 ist leider noch nicht vollständig nachgetragen. Ich bitte um Ihr Verständnis.
 {{< /callout >}}
 
 {{< cards >}}
