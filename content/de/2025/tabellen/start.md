@@ -10,17 +10,19 @@ Die **TWZ** (Turnierwertzahl) entspricht in diesem Jahr der **DWZ** (Deutsche We
 Diese Entscheidung wurde auf Wunsch der Teilnehmer getroffen.
 {{% /callout %}}
 
-| TlnNr | Teilnehmer             | TWZ  | Attr. | Verein/Ort        | Land | Geburt |
-| ----- | ---------------------- | ---- | ----- | ----------------- | ---- | ------ |
-| 1     | Geißhirt, Marco        | 1984 | M     | Ilmenauer SV      | GER  | 1990   |
-| 2     | Zeising, Benjamin      | 1854 | M     | Ilmenauer SV      | GER  | 1990   |
-| 3     | Michael, Torsten       | 1747 | M     | Ilmenauer SV      | GER  | 1967   |
-| 4     | Lehmann, Georg         | 1631 | M     | ESV Lok Meiningen | GER  | 2002   |
-| 5     | Hartung, Markus        | 1615 | M     | Ilmenauer SV      | GER  | 1987   |
-| 6     | Eisenbach, Markus, Dr. | 1505 | M     | Ilmenauer SV      | GER  | 1984   |
-| 7     | Pantleon, Florian      | 1264 | M     | SG Bettringen     | GER  | 1999   |
-| 8     | Görlach, Hanna         | 1210 | W     | Ilmenauer SV      | GER  | 2006   |
-| 9     | Lehmann, Norik         | 1022 | M     | Ilmenauer SV      | GER  | 2010   |
-| 10    | Winger, Frank          | 832  | M     | Ilmenauer SV      | GER  | 1964   |
-| 11    | Jung, Timo             |      | M     | Ilmenauer SV      | GER  | 2005   |
-| 12    | Cakmakci, Muhammed     |      | M     | Ilmenauer SV      | GER  | 2001   |
+| TlnNr | Teilnehmer              | TWZ  | Verein/Ort                | Land | Geburt |
+|-------|--------------------------|------|---------------------------|------|--------|
+| 1     | Ziganshin, Ainur        | 2244 | Ilmenauer SV              | RUS  | 1998   |
+| 2     | Geißhirt, Marco         | 1984 | Ilmenauer SV              | GER  | 1990   |
+| 3     | Zeising, Benjamin       | 1854 | Ilmenauer SV              | GER  | 1990   |
+| 4     | Michael, Torsten        | 1747 | Ilmenauer SV              | GER  | 1967   |
+| 5     | Lehmann, Georg          | 1631 | ESV Lok Meiningen         | GER  | 2002   |
+| 6     | Hartung, Markus         | 1615 | Ilmenauer SV              | GER  | 1987   |
+| 7     | Eisenbach, Markus, Dr.  | 1505 | Ilmenauer SV              | GER  | 1984   |
+| 8     | Skopp, Erik             | 1420 | FC Bayern München e.V.    | GER  | 1998   |
+| 9     | Pantleon, Florian       | 1264 | SG Bettringen             | GER  | 1999   |
+| 10    | Görlach, Hanna          | 1210 | Ilmenauer SV              | GER  | 2006   |
+| 11    | Lehmann, Norik          | 1022 | Ilmenauer SV              | GER  | 2010   |
+| 12    | Winger, Frank           | 832  | Ilmenauer SV              | GER  | 1964   |
+| 13    | Cakmakci, Muhammed      |      | Ilmenauer SV              | GER  | 2001   |
+| 14    | Jung, Timo              |      | Ilmenauer SV              | GER  | 2005   |
