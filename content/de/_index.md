@@ -1,30 +1,57 @@
 ---
-title: Vereinsmeisterschaft des Ilmenauer SV
+title: Vereinsmeisterschaft 2025
 toc: false
 type: docs
 ---
 
-## 2025
+## Paarungen aller Runden
+
+Paarungen und Ranglisten gibt es auf Chess-Results und FindChessGame:
+
 {{< cards >}}
 {{< card link="https://chess-results.com/tnr1058956.aspx?lan=0" title="Chess-Results" icon="user" >}}
-{{< card link="2025/runde" title="Runden" icon="user" >}}
-{{< card link="2025/rangliste" title="Rangliste" icon="user" >}}
-{{< card link="2025/tabellen" title="Tabellen" icon="user" >}}
-{{< card link="2025/ausschreibung" title="Ausschreibung" icon="user" >}}
+{{< card link="https://www.findchessgames.com/index-0134,224,1232-turniere-anzeigen.html" title="FindChessGame" icon="user" >}}
 {{< /cards >}}
 
-## 2024
+## Wichtige Informationen
+
 {{< cards >}}
-{{< card link="https://chess-results.com/tnr838334.aspx?lan=0" title="Chess-Results" icon="user" >}}
-{{< card link="2024/runde" title="Runden" icon="user" >}}
-{{< card link="2024/rangliste" title="Rangliste" icon="user" >}}
-{{< card link="2024/tabellen" title="Tabellen" icon="user" >}}
+{{< card link="ausschreibung" title="Ausschreibung" icon="user" >}}
+{{< card link="start" title="Start Rangliste" icon="user" >}}
 {{< /cards >}}
 
-## 2023
+## Paarungen aller Runden
+
 {{< cards >}}
-{{< card link="https://archive.chess-results.com/tnr786214.aspx?lan=0" title="Chess-Results" icon="user" >}}
-{{< card link="2023/runde" title="Runden" icon="user" >}}
-{{< card link="2023/rangliste" title="Rangliste" icon="user" >}}
-{{< card link="2023/tabellen" title="Tabellen" icon="user" >}}
+{{< card link="runde/1" title="Paarungen Runde 1" icon="user" >}}
+{{< card link="runde/2" title="Paarungen Runde 2" icon="user" >}}
+{{< card link="runde/3" title="Paarungen Runde 3" icon="user" >}}
+{{< card link="runde/4" title="Paarungen Runde 4" icon="user" >}}
+{{< card link="runde/5" title="Paarungen Runde 5" icon="user" >}}
+{{< card link="runde/6" title="Paarungen Runde 6" icon="user" >}}
+{{< card link="runde/7" title="Paarungen Runde 7" icon="user" >}}
+{{< card link="runde/8" title="Paarungen Runde 8" icon="user" >}}
+{{< card link="runde/9" title="Paarungen Runde 9" icon="user" >}}
+{{< /cards >}}
+
+## Rangliste aller Runden
+
+{{< cards >}}
+{{< card link="rangliste/1" title="Rangliste nach Runde 1" icon="user" >}}
+{{< card link="rangliste/2" title="Rangliste nach Runde 2" icon="user" >}}
+{{< card link="rangliste/3" title="Rangliste nach Runde 3" icon="user" >}}
+{{< card link="rangliste/4" title="Rangliste nach Runde 4" icon="user" >}}
+{{< card link="rangliste/5" title="Rangliste nach Runde 5" icon="user" >}}
+{{< card link="rangliste/6" title="Rangliste nach Runde 6" icon="user" >}}
+{{< card link="rangliste/7" title="Rangliste nach Runde 7" icon="user" >}}
+{{< card link="rangliste/8" title="Rangliste nach Runde 8" icon="user" >}}
+{{< card link="rangliste/9" title="Rangliste nach Runde 9" icon="user" >}}
+{{< /cards >}}
+
+## Sondertabellen
+
+{{< cards >}}
+{{< card link="tabellen/dwz" title="DWZ Auswertung" icon="user" >}}
+{{< card link="tabellen/elo" title="ELO Auswertung" icon="user" >}}
+{{< card link="tabellen/fortschritt" title="Fortschrittstabelle" icon="user" >}}
 {{< /cards >}}
