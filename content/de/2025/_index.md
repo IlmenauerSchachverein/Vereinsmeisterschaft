@@ -1,7 +1,7 @@
 ---
 title: Vereinsmeisterschaft 2025
 toc: false
-draft: true
+sidebar: false
 ---
 
 ## Paarungen aller Runden
