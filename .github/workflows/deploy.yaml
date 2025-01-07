@@ -1,4 +1,4 @@
-name: Deploy IlmenauerSV
+name: Deploy Ilmenauer Schachverein
 
 on:
   push:
@@ -35,8 +35,6 @@ jobs:
 
       - name: Build Hugo site
         run: |
-          sed -i 's|https://vm.ilmenauer-schachverein.de|https://ilmenauersv.de/vm|g' hugo.yaml
-          sed -i 's/GHNT7TZVBZ/WWS5KM7BNV/g' hugo.yaml
           hugo mod get
           hugo mod tidy
           hugo
@@ -47,7 +45,7 @@ jobs:
           host: ${{ secrets.SSH_SERVER }}
           username: ${{ secrets.SSH_USERNAME }}
           source: "public/*"
-          target: "/var/www/ilmenauersv/vm"
+          target: "/var/www/vm"
           rm: true
           password: ${{ secrets.SSH_PASSWORD }}
 
@@ -57,4 +55,4 @@ jobs:
           host: ${{ secrets.SSH_SERVER }}
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
-          script: cd /var/www/ilmenauersv/vm; mv public/* .;  rm -rf public
+          script: cd /var/www/vm; mv public/* .;  rm -rf public
