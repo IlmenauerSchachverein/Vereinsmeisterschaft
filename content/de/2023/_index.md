@@ -1,9 +1,7 @@
 ---
 title: Vereinsmeisterschaft 2023
 toc: false
-menu:
-  main:
-    hidden: true
+draft: true
 ---
 
 ## Wichtige Informationen
