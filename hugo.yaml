@@ -31,9 +31,9 @@ menu:
     - name: Chess-Results
       url: "https://chess-results.com/tnr1058956.aspx?lan=0"
       weight: -100
-    - name: Impressum
-      pageRef: /imprint
-      weight: 3
+    - name: Ilmenauer Open
+      url: "https://open.ilmenauer-schachverein.de"
+      weight: -100
     - name: Datenschutzerklärung
       pageRef: /datenschutzerklaerung
       weight: 3
