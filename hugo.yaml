@@ -31,9 +31,6 @@ menu:
     - name: Chess-Results
       url: "https://chess-results.com/tnr1058956.aspx?lan=0"
       weight: -100
-    - name: About
-      pageRef: /about
-      weight: 3
     - name: Impressum
       pageRef: /imprint
       weight: 3
@@ -75,7 +72,7 @@ params:
 
   editURL:
     enable: false
-    base: "https://github.com/IlmenauerSchachverein/Vereinsmeisterschaft2025/edit/main/content"
+    base: "https://github.com/IlmenauerSchachverein/Vereinsmeisterschaft/edit/main/content"
 
   page:
     width: full
