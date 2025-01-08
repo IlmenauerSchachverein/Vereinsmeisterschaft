@@ -16,7 +16,7 @@ Paarungen und Ranglisten gibt es auf Chess-Results und FindChessGame:
 
 {{< cards >}}
 {{< card link="ausschreibung" title="Ausschreibung" icon="user" >}}
-{{< card link="start" title="Start Rangliste" icon="user" >}}
+{{< card link="startrangliste" title="Start Rangliste" icon="user" >}}
 {{< /cards >}}
 
 ## Paarungen aller Runden
