@@ -5,6 +5,7 @@ on:
     types:
       - opened
       - reopened
+      - opened
   pull_request:
     types:
       - opened
