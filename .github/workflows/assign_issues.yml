@@ -1,6 +1,10 @@
 name: Auto Assign
 
 on:
+  issues:
+    types:
+      - opened
+      - reopened
   pull_request:
     types:
       - opened
