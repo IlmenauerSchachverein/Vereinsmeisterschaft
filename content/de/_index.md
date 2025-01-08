@@ -53,5 +53,4 @@ Paarungen und Ranglisten gibt es auf Chess-Results und FindChessGame:
 {{< cards >}}
 {{< card link="2025/tabellen/dwz" title="DWZ Auswertung" icon="user" >}}
 {{< card link="2025/tabellen/elo" title="ELO Auswertung" icon="user" >}}
-{{< card link="2025/tabellen/fortschritt" title="Fortschrittstabelle" icon="user" >}}
 {{< /cards >}}
