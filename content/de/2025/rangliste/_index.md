@@ -6,7 +6,7 @@ sidebar:
 ---
 
 {{< cards >}}
-{{< card link="../tabellen/start" title="Startrangliste" icon="user" >}}
+{{< card link="../startrangliste" title="Startrangliste" icon="user" >}}
 {{< card link="1" title="Rangliste nach Runde 1" icon="user" >}}
 {{< card link="2" title="Rangliste nach Runde 2" icon="user" >}}
 {{< card link="3" title="Rangliste nach Runde 3" icon="user" >}}
