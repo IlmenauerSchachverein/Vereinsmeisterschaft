@@ -6,7 +6,7 @@ toc: false
 
 ## Wichtige Informationen 
 {{< cards >}}
-  {{< card link="tabellen/start" title="Startrangliste" icon="user" >}}
+  {{< card link="startrangliste" title="Startrangliste" icon="user" >}}
 {{< /cards >}}
 ## Paarungen aller Runden 
 
