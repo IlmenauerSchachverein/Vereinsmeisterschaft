@@ -7,7 +7,7 @@ toc: false
 
 {{< cards >}}
 {{< card link="invitation" title="Ausschreibung" icon="user" >}}
-{{< card link="tabellen/start" title="Startrangliste" icon="user" >}}
+{{< card link="startrangliste" title="Startrangliste" icon="user" >}}
 {{< /cards >}}
 
 ## Paarungen aller Runden
@@ -37,5 +37,4 @@ toc: false
 {{< cards >}}
 {{< card link="tabellen/dwz" title="DWZ Auswertung" icon="user" >}}
 {{< card link="tabellen/elo" title="ELO Auswertung" icon="user" >}}
-{{< card link="tabellen/start" title="Startrangliste" icon="user" >}}
 {{< /cards >}}
