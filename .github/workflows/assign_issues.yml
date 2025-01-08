@@ -1,0 +1,15 @@
+name: Assign Issues to eskopp
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign issue to eskopp
+        uses: actions-ecosystem/action-assign@v2
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          assignees: eskopp
