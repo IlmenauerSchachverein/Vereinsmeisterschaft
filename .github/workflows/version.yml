@@ -25,14 +25,13 @@ jobs:
         run: |
           LATEST_GO_VERSION=$(curl -s "https://go.dev/VERSION?m=text" | sed 's/^go//')
           echo "::set-output name=go_version::$LATEST_GO_VERSION"
-      
+
       - name: Install Hugo Extended
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: "latest"
           extended: true
 
-          
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
@@ -47,6 +46,8 @@ jobs:
           hugo mod get github.com/gethinode/mod-flexsearch
           hugo mod get github.com/imfing/hextra
 
+      - name: Run table conversion script
+        run: go run table.go
 
       - name: Commit and Push Changes
         env:
@@ -57,4 +58,4 @@ jobs:
           git add go.mod
           git add go.sum
           git commit -m "Update Hugo modules and Go version [skip ci]" || echo "No changes to commit"
-          git push 
+          git push

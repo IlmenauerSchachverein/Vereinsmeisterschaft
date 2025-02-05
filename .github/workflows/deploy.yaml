@@ -4,7 +4,7 @@ on:
   push:
     branches: ["main"]
   schedule:
-    - cron: "0 0 1 * *" 
+    - cron: "0 0 1 * *"
 
 jobs:
   deploy:
@@ -35,6 +35,7 @@ jobs:
 
       - name: Build Hugo site
         run: |
+          go run table.go 
           hugo mod get
           hugo mod tidy
           hugo
@@ -57,22 +58,22 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: cd /var/www/vm; mv public/* .;  rm -rf public
 
-      - name: PHP Composer 
+      - name: PHP Composer
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_SERVER }}
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-              cd /var/www/vm/register
-              php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-              php -r "if (hash_file('sha384', 'composer-setup.php') === trim(file_get_contents('https://composer.github.io/installer.sig'))) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); exit(1); } echo PHP_EOL;"
-              php composer-setup.php --install-dir=/usr/local/bin --filename=composer
-              rm composer-setup.php
-              composer install
-              composer show
-              suggests=$(composer suggests | grep -oE "^[^ ]+")
-              for package in $suggests; do
-                  echo "Installing suggested package: $package"
-                  composer require "$package"
-              done
+            cd /var/www/vm/register
+            php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+            php -r "if (hash_file('sha384', 'composer-setup.php') === trim(file_get_contents('https://composer.github.io/installer.sig'))) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); exit(1); } echo PHP_EOL;"
+            php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+            rm composer-setup.php
+            composer install
+            composer show
+            suggests=$(composer suggests | grep -oE "^[^ ]+")
+            for package in $suggests; do
+                echo "Installing suggested package: $package"
+                composer require "$package"
+            done
