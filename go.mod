@@ -1,4 +1,4 @@
-module github.com/imfing/hextra-starter-template
+module https://vm.ilmenauer-schachverein.de	
 
 go 1.23.6
 
