@@ -28,4 +28,3 @@ toc: false
 | 20    | Greul, Simon     |      |                             | GER  | 1998   |
 | 21    | Baum, Alexander  | 1631 | Ilmenauer SV                | GER  | 2004   |
 | 22    | Brandt, Wolfgang | 1611 | SV Stützerbach              | GER  | 1960   |
-
