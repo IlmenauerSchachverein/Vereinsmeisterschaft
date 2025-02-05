@@ -35,7 +35,8 @@ jobs:
 
       - name: Build Hugo site
         run: |
-          go run table.go 
+          go run rangliste.go
+          go run paarungen.go 
           hugo mod get
           hugo mod tidy
           hugo
