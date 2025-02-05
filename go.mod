@@ -1,4 +1,4 @@
-module https://vm.ilmenauer-schachverein.de	
+module vm.ilmenauer-schachverein.de	
 
 go 1.23.6
 
