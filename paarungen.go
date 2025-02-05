@@ -1,3 +1,5 @@
+// see: https://gitlab.erik-skopp.de/-/snippets/5
+
 package main
 
 import (
