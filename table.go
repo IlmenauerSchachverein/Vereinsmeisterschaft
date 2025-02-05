@@ -81,13 +81,13 @@ func processFile(path string) {
 	for scanner.Scan() {
 		line := scanner.Text()
 
-		if strings.Contains(line, "{{< rangliste >}}") {
+		if strings.Contains(line, "<rangliste>") {
 			insideRangliste = true
 			ranglisteBlock = []string{}
 			continue
 		}
 
-		if strings.Contains(line, "{{< /rangliste >}}") {
+		if strings.Contains(line, "</rangliste>") {
 			insideRangliste = false
 			// Konvertiere den Ranglisten-Block und füge ihn ein
 			markdownTable := convertToMarkdown(strings.Join(ranglisteBlock, "\n"))
