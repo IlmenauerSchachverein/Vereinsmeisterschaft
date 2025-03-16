@@ -1,0 +1,89 @@
+stages:
+  - update
+  - build
+  - deploy
+
+update:
+  stage: update
+  image: archlinux:latest
+  before_script:
+    - echo "Updating system and installing Go..."
+    - pacman -Syu --noconfirm
+    - pacman -S --noconfirm go git hugo dos2unix
+  script:
+    - |
+      echo "Using repository directory: $CI_PROJECT_DIR"
+      echo "Fetching latest changes from remote..."
+      git fetch origin
+      echo "Checking out branch $CI_COMMIT_REF_NAME..."
+      git checkout $CI_COMMIT_REF_NAME
+      git reset --hard origin/$CI_COMMIT_REF_NAME
+      echo "Upgrading Go version..."
+      latest_go_version=$(go version | awk '{print $3}' | sed 's/go//')
+      go mod edit -go "$latest_go_version"
+      echo "Updating all Go dependencies..."
+      go get github.com/gethinode/mod-flexsearch
+      go get github.com/imfing/hextra
+      go get -u ./...
+      ls
+      echo "Executing update scripts..."
+      dos2unix ./build.sh
+      sh ./build.sh
+      echo "Configuring Git user..."
+      git config user.name "CI Pipeline"
+      git config user.email "cipipeline@example.com"
+      echo "Staging changes..."
+      git add .
+      git add content/*
+      echo "Committing changes..."
+      git commit -m "Automatic update of Go, Hugo and Go dependencies [skip ci]" || echo "No changes to commit"
+      echo "Setting Git remote with PAT..."
+      git remote set-url origin "https://oauth2:${PAT}@gitlab.ilmenauer-schachverein.de/turniere/vereinsmeisterschaft.git"
+      echo "Pulling latest changes..."
+      git pull origin $CI_COMMIT_REF_NAME --rebase || echo "No pull needed"
+      echo "Pushing changes..."
+      git push origin HEAD:$CI_COMMIT_REF_NAME || echo "Push failed, but continuing"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+build:
+  stage: build
+  image: archlinux:latest
+  before_script:
+    - pacman -Syu --noconfirm git go hugo python dos2unix
+  script:
+    - echo "Starting build process using build.sh..."
+    - dos2unix ./build.sh
+    - sh ./build.sh
+    - echo "Running Hugo commands..."
+    - hugo mod get
+    - hugo mod tidy
+    - hugo --gc --minify --enableGitInfo
+  artifacts:
+    paths:
+      - public/
+    expire_in: 1 week
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+deploy:
+  stage: deploy
+  image: archlinux:latest
+  before_script:
+    - |
+      echo "Initializing SSH for deployment..."
+      pacman -Syu --noconfirm openssh
+      eval "$(ssh-agent -s)"
+      echo "$SSHKEY" | tr -d '\r' | ssh-add -
+      ssh-add -l || echo "SSH key could not be added"
+      mkdir -p ~/.ssh
+      ssh-keyscan -H "$SSHSERVER" > ~/.ssh/known_hosts
+  script:
+    - |
+      echo "Deleting previous files on server..."
+      ssh -o StrictHostKeyChecking=no "webuser@$SSHSERVER" "rm -rf /var/www/vm/*"
+      ssh -o StrictHostKeyChecking=no "webuser@$SSHSERVER" "mkdir -p /var/www/vm"
+      echo "Transferring new files..."
+      scp -o StrictHostKeyChecking=no -r public/* "webuser@$SSHSERVER:/var/www/vm"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'

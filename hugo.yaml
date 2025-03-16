@@ -1,0 +1,78 @@
+title: Vereinsmeisterschaft Ilmenauer SV
+baseURL: "https://vm.ilmenauer-schachverein.de"
+defaultContentLanguage: de
+
+# import hextra as module
+module:
+  imports:
+    - path: github.com/imfing/hextra
+    - path: github.com/gethinode/mod-flexsearch
+
+markup:
+  # allow raw html
+  goldmark:
+    renderer:
+      unsafe: true
+      linkify: true
+
+  # enable hextra syntax highlight
+  highlight:
+    noClasses: false
+
+languages:
+  de:
+    languageName: German
+    weight: 1
+    title: Vereinsmeisterschaft
+    contentDir: "content/de"
+
+menu:
+  main:
+    - name: Chess-Results
+      url: "https://chess-results.com/tnr1058956.aspx?lan=0"
+      weight: -100
+    - name: Ilmenauer Open
+      url: "https://open.ilmenauer-schachverein.de"
+      weight: -100
+    - name: Datenschutzerklärung
+      pageRef: /datenschutzerklaerung
+      weight: 3
+    - name: Ilmenauer Schachverein ↗
+      url: "https://ilmenauer-schachverein.de"
+      weight: 4
+    - name: Search
+      weight: 5
+      params:
+        type: search
+    - name: GitHub
+      weight: 6
+      url: "https://gitlab.ilmenauer-schachverein.de/turniere/vereinsmeisterschaft"
+      params:
+        icon: github
+    - name: Instagram
+      weight: 7
+      url: "https://instagram.com/ilmenauer_schachverein"
+      params:
+        icon: instagram
+services:
+  googleAnalytics:
+    ID: G-Z8VRKDVL6J
+params:
+  disableToc: true
+  navbar:
+    displayTitle: true
+    displayLogo: true
+
+  theme:
+    default: light
+
+  footer:
+    displayCopyright: true
+    displayPoweredBy: true
+
+  editURL:
+    enable: false
+    base: "https://gitlab.ilmenauer-schachverein.de/turniere/vereinsmeisterschaft/-/edit/main/"
+
+  page:
+    width: full
