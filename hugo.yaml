@@ -46,7 +46,7 @@ menu:
         type: search
     - name: GitHub
       weight: 6
-      url: "https://gitlab.ilmenauer-schachverein.de/turniere/vereinsmeisterschaft"
+      url: "https://gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft"
       params:
         icon: github
     - name: Instagram
@@ -72,7 +72,7 @@ params:
 
   editURL:
     enable: false
-    base: "https://gitlab.ilmenauer-schachverein.de/turniere/vereinsmeisterschaft/-/edit/main/"
+    base: "https://gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft"
 
   page:
     width: full
