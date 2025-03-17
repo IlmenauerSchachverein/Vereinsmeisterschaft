@@ -22,6 +22,9 @@ update:
 
       echo "Upgrading Go version and dependencies..."
       go install golang.org/dl/latest@latest && latest=$(latest) && go mod edit -go "$latest" && go mod tidy
+      hugo mod get github.com/imfing/hextra
+      hugo mod get github.com/gethinode/mod-flexsearch
+
 
       echo "Executing update scripts..."
       dos2unix ./build.sh
