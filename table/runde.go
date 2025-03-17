@@ -8,30 +8,7 @@ import (
 	"strings"
 )
 
-// insertLineBreakAfterFirstCommaIfLong fügt einen Zeilenumbruch nach dem ersten Komma ein,
-// falls der übergebene String länger als den angegebenen Schwellenwert ist.
-func insertLineBreakAfterFirstCommaIfLong(s string, threshold int) string {
-	if len(s) < threshold {
-		return s
-	}
-	idx := strings.Index(s, ",")
-	if idx == -1 {
-		return s
-	}
-	// Optional: Sollte der Markdown-Renderer kein "\n" in Tabellenzellen verarbeiten,
-	// kann hier auch "<br>" verwendet werden.
-	return s[:idx+1] + "\n" + strings.TrimSpace(s[idx+1:])
-}
-
 // convertRundeToMarkdown wandelt einen <runde> Block in eine Markdown-Tabelle um.
-// Es werden 14 Spalten erwartet, wobei:
-// - Linke Seite: Spalten 0 bis 5 (Tisch, TNr, Teilnehmer, Titel, Punkte, -)
-// - Rechte Seite: Spalten 6 bis 9 (TNr, Teilnehmer, Titel, Punkte)
-// - Die Spalten 10, 11 und 12 werden zu einer Spalte "Ergebnis" zusammengeführt.
-// - Spalte 13 wird verworfen.
-// Die "Titel"-Spalten (Spalte 3 und Spalte 8) werden aus der Ausgabe entfernt.
-// Zusätzlich wird bei langen Namen (länger als der definierte Schwellenwert)
-// ein Zeilenumbruch nach dem ersten Komma eingefügt.
 func convertRundeToMarkdown(runde string) string {
 	lines := strings.Split(runde, "\n")
 	var cleanLines []string
@@ -49,13 +26,8 @@ func convertRundeToMarkdown(runde string) string {
 		"| " + strings.Repeat("----- | ", len(headers)),
 	}
 
-	// Definiere den Schwellenwert für lange Namen
-	const nameThreshold = 18
-
 	for _, line := range cleanLines {
-		// Aufspalten der Zeile anhand von Tabulatoren
 		columns := strings.Split(line, "\t")
-		// Falls weniger als 14 Spalten vorhanden, mit leeren Strings auffüllen
 		for len(columns) < 14 {
 			columns = append(columns, "")
 		}
@@ -66,21 +38,17 @@ func convertRundeToMarkdown(runde string) string {
 
 		// Zusammenführen der Spalten 10, 11 und 12 zu einer Spalte "Ergebnis"
 		merged := strings.TrimSpace(columns[10]) + " " + strings.TrimSpace(columns[11]) + " " + strings.TrimSpace(columns[12])
-		merged = strings.Join(strings.Fields(merged), " ") // entfernt überflüssige Leerzeichen
-
-		// Anwenden des Zeilenumbruchs bei langen Namen in den Teilnehmer-Spalten
-		teilnehmerLinks := insertLineBreakAfterFirstCommaIfLong(strings.TrimSpace(columns[2]), nameThreshold)
-		teilnehmerRechts := insertLineBreakAfterFirstCommaIfLong(strings.TrimSpace(columns[7]), nameThreshold)
+		merged = strings.Join(strings.Fields(merged), " ")
 
 		// Neue Spalten: Entferne "Titel"-Spalten (Spalte 3 und Spalte 8)
 		newColumns := []string{
 			strings.TrimSpace(columns[0]), // Tisch
 			strings.TrimSpace(columns[1]), // TNr
-			teilnehmerLinks,               // Teilnehmer (links) mit ggf. Zeilenumbruch
+			strings.TrimSpace(columns[2]), // Teilnehmer (links)
 			strings.TrimSpace(columns[4]), // Punkte (anstelle von Titel)
 			strings.TrimSpace(columns[5]), // -
 			strings.TrimSpace(columns[6]), // TNr (rechte Seite)
-			teilnehmerRechts,              // Teilnehmer (rechts) mit ggf. Zeilenumbruch
+			strings.TrimSpace(columns[7]), // Teilnehmer (rechts)
 			strings.TrimSpace(columns[9]), // Punkte (rechte Seite, statt Titel)
 			merged,                        // Ergebnis (gemergt)
 		}
