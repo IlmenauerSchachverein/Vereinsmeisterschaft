@@ -38,7 +38,7 @@ update:
       echo "Committing changes..."
       git commit -m "Automatic update of Go, Hugo and Go dependencies [skip ci]" || echo "No changes to commit"
       echo "Setting Git remote with PAT..."
-      git remote set-url origin "https://oauth2:${PAT}@gitlab.ilmenauer-schachverein.de/turniere/vereinsmeisterschaft.git"
+      git remote set-url origin "https://oauth2:${PAT}@gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft.git"
       echo "Pulling latest changes..."
       git pull origin $CI_COMMIT_REF_NAME --rebase || echo "No pull needed"
       echo "Pushing changes..."
