@@ -85,12 +85,12 @@ deploy:
   script:
     - |
       echo "Deleting previous files on server..."
-      sshpass -p "$isvpass" ssh -o StrictHostKeyChecking=no "webuser@$isvip" "rm -rf /var/www/vm/*"
+      sshpass -p "$sshpass" ssh -o StrictHostKeyChecking=no "webuser@$sship" "rm -rf /var/www/vm/*"
 
       echo "Creating directory if not exists..."
-      sshpass -p "$isvpass" ssh -o StrictHostKeyChecking=no "webuser@$isvip" "mkdir -p /var/www/vm"
+      sshpass -p "$sshpass" ssh -o StrictHostKeyChecking=no "webuser@$sship" "mkdir -p /var/www/vm"
 
       echo "Transferring new files..."
-      sshpass -p "$isvpass" rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" public/ "webuser@$isvip:/var/www/vm/"
+      sshpass -p "$sshpass" rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" public/ "webuser@$sship:/var/www/vm/"
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
