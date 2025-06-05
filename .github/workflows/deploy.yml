@@ -7,7 +7,7 @@ on:
 env:
   SSHSERVER: ${{ secrets.SSHSERVER }}
   SSHPW: ${{ secrets.SSHPW }}
-  GITLAB_PAT: ${{ secrets.GITLAB_PAT }}
+  GITLAB_PAT: ${{ secrets.PAT }}
 
 jobs:
   update:
