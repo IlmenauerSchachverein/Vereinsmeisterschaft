@@ -17,4 +17,5 @@ jobs:
       - name: Push to GitLab mirror
         run: |
           git remote add gitlab https://oauth2:${{ secrets.PAT }}@gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft.git
-          git push --mirror gitlab
+          git push --all gitlab
+          git push --tags gitlab
