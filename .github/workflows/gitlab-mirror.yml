@@ -14,8 +14,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0  
-      - name: Push to GitLab mirror
+      - name: Mirror to GitLab (with rebase)
         run: |
-          git remote add gitlab https://oauth2:${{ secrets.PAT }}@gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft.git
-          git push --all gitlab
-          git push --tags gitlab
+          git remote add gitlab "https://oauth2:${GITLAB_PAT}@gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft.git"
+          git fetch gitlab
+          git rebase gitlab/main || echo "No changes to rebase"
+          git push gitlab --all
+          git push gitlab --tags
