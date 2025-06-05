@@ -1,0 +1,100 @@
+name: Build & Deploy Hugo Site
+
+on:
+  push:
+    branches: [main]
+
+env:
+  SSHSERVER: ${{ secrets.SSHSERVER }}
+  SSHPW: ${{ secrets.SSHPW }}
+  GITLAB_PAT: ${{ secrets.GITLAB_PAT }}
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "latest"
+          extended: true
+
+      - name: Update Go and Hugo modules
+        run: |
+          go mod tidy
+          hugo mod get github.com/imfing/hextra
+          hugo mod get github.com/gethinode/mod-flexsearch
+
+      - name: Run update script
+        run: |
+          dos2unix ./build.sh
+          chmod +x ./build.sh
+          ./build.sh
+
+      - name: Git Commit & Push
+        run: |
+          git config user.name "CI Pipeline"
+          git config user.email "cipipeline@example.com"
+          git add .
+          git add content/* || true
+          git commit -m "Automatic update of Go, Hugo and Go dependencies [skip ci]" || echo "Nothing to commit"
+          git remote set-url origin "https://oauth2:${GITLAB_PAT}@gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft.git"
+          git pull origin main --rebase || echo "Nothing to pull"
+          git push origin HEAD:main || echo "Push failed, continuing"
+
+  build:
+    runs-on: ubuntu-latest
+    needs: update
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
+
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "latest"
+          extended: true
+
+      - name: Run build script
+        run: |
+          dos2unix ./build.sh
+          chmod +x ./build.sh
+          ./build.sh
+
+      - name: Hugo Build
+        run: |
+          hugo mod tidy
+          hugo --gc --minify --enableGitInfo
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: public-site
+          path: public/
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Install SSH + rsync
+        run: sudo apt-get update && sudo apt-get install -y openssh-client sshpass rsync
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: public-site
+          path: public
+
+      - name: Deploy to server via rsync
+        run: |
+          sshpass -p "$SSHPW" ssh -o StrictHostKeyChecking=no "webuser@$SSHSERVER" "rm -rf /var/www/vm/* && mkdir -p /var/www/vm"
+          sshpass -p "$SSHPW" rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" public/ "webuser@$SSHSERVER:/var/www/vm/"
