@@ -112,8 +112,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Push mirror to GitLab
+      - name: Mirror to GitLab (rebase if needed)
         run: |
-          git remote add gitlab "https://oauth2:${GITLAB_PAT}@gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft.git"
-          git push gitlab --all
-          git push gitlab --tags
+         git config user.name "Ilmenauer Schachverein CI"
+         git config user.email "info@ilmenauer-schachverein.de"
+
+         git remote add gitlab "https://oauth2:${{ secrets.PAT }}@gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft.git"
+         git fetch gitlab
+         git rebase gitlab/main || echo "Nothing to rebase"
+         git push gitlab --all
+         git push gitlab --tags
