@@ -54,7 +54,7 @@ defaultContentLanguage = "de"
   [[menu.main]]
     name = "GitHub"
     weight = 6
-    url = "https://gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft"
+    url = "https://github.com/IlmenauerSchachverein/Vereinsmeisterschaft"
     [menu.main.params]
       icon = "github"
 
