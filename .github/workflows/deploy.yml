@@ -100,8 +100,8 @@ jobs:
 
       - name: Rsync to server
         run: |
-          sshpass -p "$SSHPW" ssh -o StrictHostKeyChecking=no "webuser@$SSHSERVER" "rm -rf /var/www/vm/* && mkdir -p /var/www/vm"
-          sshpass -p "$SSHPW" rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" public/ "webuser@$SSHSERVER:/var/www/vm/"
+          sshpass -p "$SSHPW" ssh -o StrictHostKeyChecking=no "root@$SSHSERVER" "rm -rf /var/www/vm/* && mkdir -p /var/www/vm"
+          sshpass -p "$SSHPW" rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" public/ "root@$SSHSERVER:/var/www/vm/"
 
   mirror:
     name: Mirror repository to GitLab
