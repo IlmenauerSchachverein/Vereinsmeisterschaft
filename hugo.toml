@@ -65,9 +65,6 @@ defaultContentLanguage = "de"
     [menu.main.params]
       icon = "instagram"
 
-[services.googleAnalytics]
-  ID = "G-Z8VRKDVL6J"
-
 [params]
   disableToc = true
 
