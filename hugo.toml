@@ -81,7 +81,7 @@ defaultContentLanguage = "de"
 
   [params.editURL]
     enable = false
-    base = "https://gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft"
+    base = "https://github.com/IlmenauerSchachverein/Vereinsmeisterschaft"
 
   [params.page]
     width = "full"
