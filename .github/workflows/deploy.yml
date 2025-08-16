@@ -2,7 +2,7 @@ name: Build & Deploy Hugo Site
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 env:
   SSHSERVER: ${{ secrets.SSHSERVER }}
@@ -20,11 +20,11 @@ jobs:
 
       - uses: actions/setup-go@v5
         with:
-          go-version: 'stable'
+          go-version: "1.25.0"
 
       - uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'
+          hugo-version: "latest"
           extended: true
 
       - name: Install dos2unix
@@ -59,11 +59,11 @@ jobs:
 
       - uses: actions/setup-go@v5
         with:
-          go-version: 'stable'
+          go-version: "stable"
 
       - uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'
+          hugo-version: "latest"
           extended: true
 
       - name: Install dos2unix
@@ -114,11 +114,11 @@ jobs:
 
       - name: Mirror to GitLab (rebase if needed)
         run: |
-         git config user.name "Ilmenauer Schachverein CI"
-         git config user.email "info@ilmenauer-schachverein.de"
+          git config user.name "Ilmenauer Schachverein CI"
+          git config user.email "info@ilmenauer-schachverein.de"
 
-         git remote add gitlab "https://oauth2:${{ secrets.PAT }}@gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft.git"
-         git fetch gitlab
-         git rebase gitlab/main || echo "Nothing to rebase"
-         git push gitlab --all
-         git push gitlab --tags
+          git remote add gitlab "https://oauth2:${{ secrets.PAT }}@gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft.git"
+          git fetch gitlab
+          git rebase gitlab/main || echo "Nothing to rebase"
+          git push gitlab --all
+          git push gitlab --tags
