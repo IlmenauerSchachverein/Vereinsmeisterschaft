@@ -41,15 +41,7 @@ jobs:
           dos2unix ./build.sh
           chmod +x ./build.sh
           ./build.sh
-
-      - name: Git Commit locally
-        run: |
-          git config user.name "CI Pipeline"
-          git config user.email "cipipeline@example.com"
-          git add .
-          git add content/* || true
-          git commit -m "Automatic update of Go, Hugo and Go dependencies [skip ci]" || echo "Nothing to commit"
-
+  
   build:
     name: Build Hugo Site
     runs-on: ubuntu-latest
