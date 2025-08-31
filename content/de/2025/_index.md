@@ -5,11 +5,10 @@ toc: false
 
 ## Paarungen aller Runden
 
-Paarungen und Ranglisten gibt es auf Chess-Results und FindChessGame:
+Paarungen und Ranglisten gibt es auf Chess-Results:
 
 {{< cards >}}
 {{< card link="https://chess-results.com/tnr1058956.aspx?lan=0" title="Chess-Results" icon="user" >}}
-{{< card link="https://www.findchessgames.com/index-0134,224,1232-turniere-anzeigen.html" title="FindChessGame" icon="user" >}}
 {{< /cards >}}
 
 ## Wichtige Informationen
