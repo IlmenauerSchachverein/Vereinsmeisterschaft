@@ -83,7 +83,7 @@ googleAnalytics = "G-0TSTHYJ44E"
 
   [params.editURL]
     enable = false
-    base = "https://github.com/IlmenauerSchachverein/Vereinsmeisterschaft"
+    base = "https://github.com/IlmenauerSchachverein/Vereinsmeisterschaft" 
 
   [params.page]
     width = "full"
