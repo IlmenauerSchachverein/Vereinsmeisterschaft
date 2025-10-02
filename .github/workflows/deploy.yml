@@ -39,7 +39,6 @@ jobs:
 
       - name: Prepare apt and install tools
         run: |
-          sudo apt-get update
           sudo apt-get install -y dos2unix
 
       - name: Cache Go modules
