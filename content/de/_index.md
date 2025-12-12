@@ -4,6 +4,12 @@ toc: false
 type: docs
 ---
 
+{{< callout type="error" >}}
+ 2026 findet keine Vereinsmeisterschaft statt.
+{{< /callout >}}
+
+
+
 ## Paarungen aller Runden
 
 Paarungen und Ranglisten gibt es auf Chess-Results:
