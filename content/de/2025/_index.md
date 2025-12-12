@@ -45,10 +45,3 @@ Paarungen und Ranglisten gibt es auf Chess-Results:
 {{< card link="rangliste/8" title="Rangliste nach Runde 8" icon="user" >}}
 {{< card link="rangliste/9" title="Rangliste nach Runde 9" icon="user" >}}
 {{< /cards >}}
-
-## Sondertabellen
-
-{{< cards >}}
-{{< card link="tabellen/dwz" title="DWZ Auswertung" icon="user" >}}
-{{< card link="tabellen/elo" title="ELO Auswertung" icon="user" >}}
-{{< /cards >}}

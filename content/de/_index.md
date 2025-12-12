@@ -46,10 +46,3 @@ Paarungen und Ranglisten gibt es auf Chess-Results:
 {{< card link="2025/rangliste/8" title="Rangliste nach Runde 8" icon="user" >}}
 {{< card link="2025/rangliste/9" title="Rangliste nach Runde 9" icon="user" >}}
 {{< /cards >}}
-
-## Sondertabellen
-
-{{< cards >}}
-{{< card link="2025/tabellen/dwz" title="DWZ Auswertung" icon="user" >}}
-{{< card link="2025/tabellen/elo" title="ELO Auswertung" icon="user" >}}
-{{< /cards >}}
