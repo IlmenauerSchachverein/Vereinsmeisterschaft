@@ -2,6 +2,11 @@
 title: Vereinsmeisterschaft 2025
 toc: false
 ---
+{{< callout type="error" >}}
+ 2026 findet keine Vereinsmeisterschaft statt.
+{{< /callout >}}
+
+
 
 ## Paarungen aller Runden
 
