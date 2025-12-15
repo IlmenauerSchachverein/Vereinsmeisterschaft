@@ -42,7 +42,7 @@ jobs:
           sudo apt-get install -y dos2unix
 
       - name: Cache Go modules
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.cache/go-build
@@ -51,7 +51,7 @@ jobs:
           restore-keys: ${{ runner.os }}-go-
 
       - name: Cache Hugo modules
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cache/hugo
           key: ${{ runner.os }}-hugo-${{ hashFiles('**/go.sum', 'hugo.toml', 'hugo.yaml', 'hugo.json') }}
