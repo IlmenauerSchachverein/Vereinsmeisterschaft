@@ -39,6 +39,7 @@ jobs:
 
       - name: Prepare apt and install tools
         run: |
+          sudo apt-get update
           sudo apt-get install -y dos2unix
 
       - name: Cache Go modules
@@ -95,15 +96,25 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      - name: Push to GitLab
+      - name: Fetch all branches and tags (for full mirroring)
+        run: |
+          set -euo pipefail
+          git fetch --prune origin "+refs/heads/*:refs/heads/*" "+refs/tags/*:refs/tags/*"
+
+      - name: Push to GitLab (all branches + tags + LFS)
         env:
           GITLAB_PAT: ${{ secrets.GITLAB_PAT }}
         run: |
+          set -euo pipefail
+
           git config --global user.name "CI Pipeline"
           git config --global user.email "info@ilmenauer-schachverein.de"
+
+          git remote remove gitlab 2>/dev/null || true
           git remote add gitlab "https://oauth2:${GITLAB_PAT}@gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft.git"
+
           git lfs install --local
           git lfs fetch --all
-          git lfs push --all gitlab main
-          git push --force gitlab main
-          git push --force --tags gitlab
+
+          git push --prune gitlab +refs/heads/*:refs/heads/* +refs/tags/*:refs/tags/*
+          git lfs push --all gitlab
