@@ -39,6 +39,7 @@ jobs:
 
       - name: Prepare apt and install tools
         run: |
+          sudo apt-get update
           sudo apt-get install -y dos2unix
 
       - name: Cache Go modules
@@ -46,7 +47,7 @@ jobs:
         with:
           path: |
             ~/.cache/go-build
-            ${{ env.GOMODCACHE }}
+            ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
           restore-keys: ${{ runner.os }}-go-
 
@@ -75,6 +76,16 @@ jobs:
       - name: Build site
         run: |
           hugo --gc --minify --enableGitInfo
+
+      - name: Mirror repo to GitLab
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "CI Pipeline"
+          git config user.email "info@ilmenauer-schachverein.de"
+          git remote add gitlab "https://oauth2:${GITLAB_TOKEN}@gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft.git"
+          git push --prune gitlab +refs/heads/*:refs/heads/* +refs/tags/*:refs/tags/*
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
