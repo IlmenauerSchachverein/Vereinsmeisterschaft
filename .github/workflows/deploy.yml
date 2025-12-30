@@ -96,25 +96,21 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      - name: Fetch all branches and tags (for full mirroring)
+      - name: Fetch all branches and tags (safe)
         run: |
           set -euo pipefail
-          git fetch --prune origin "+refs/heads/*:refs/heads/*" "+refs/tags/*:refs/tags/*"
+          git fetch --prune origin "+refs/heads/*:refs/remotes/origin/*" "+refs/tags/*:refs/tags/*"
 
       - name: Push to GitLab (all branches + tags + LFS)
         env:
           GITLAB_PAT: ${{ secrets.GITLAB_PAT }}
         run: |
           set -euo pipefail
-
           git config --global user.name "CI Pipeline"
           git config --global user.email "info@ilmenauer-schachverein.de"
-
           git remote remove gitlab 2>/dev/null || true
           git remote add gitlab "https://oauth2:${GITLAB_PAT}@gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft.git"
-
           git lfs install --local
           git lfs fetch --all
-
-          git push --prune gitlab +refs/heads/*:refs/heads/* +refs/tags/*:refs/tags/*
+          git push --prune gitlab "+refs/remotes/origin/*:refs/heads/*" "+refs/tags/*:refs/tags/*"
           git lfs push --all gitlab
