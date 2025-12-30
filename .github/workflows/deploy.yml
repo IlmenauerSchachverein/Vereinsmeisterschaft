@@ -39,20 +39,19 @@ jobs:
 
       - name: Prepare apt and install tools
         run: |
-          sudo apt-get update
           sudo apt-get install -y dos2unix
 
       - name: Cache Go modules
-        uses: actions/cache@v5
+        uses: actions/cache@v4
         with:
           path: |
             ~/.cache/go-build
-            ~/go/pkg/mod
+            ${{ env.GOMODCACHE }}
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
           restore-keys: ${{ runner.os }}-go-
 
       - name: Cache Hugo modules
-        uses: actions/cache@v5
+        uses: actions/cache@v4
         with:
           path: ~/.cache/hugo
           key: ${{ runner.os }}-hugo-${{ hashFiles('**/go.sum', 'hugo.toml', 'hugo.yaml', 'hugo.json') }}
@@ -77,16 +76,6 @@ jobs:
         run: |
           hugo --gc --minify --enableGitInfo
 
-      - name: Mirror repo to GitLab
-        env:
-          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
-        run: |
-          set -euo pipefail
-          git config user.name "CI Pipeline"
-          git config user.email "info@ilmenauer-schachverein.de"
-          git remote add gitlab "https://oauth2:${GITLAB_TOKEN}@gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft.git"
-          git push --prune gitlab +refs/heads/*:refs/heads/* +refs/tags/*:refs/tags/*
-
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -94,3 +83,27 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./public
           cname: vm.ilmenauer-schachverein.de
+
+  mirror-to-gitlab:
+    name: Mirror to GitLab
+    needs: build-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo (with LFS)
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Push to GitLab
+        env:
+          GITLAB_PAT: ${{ secrets.GITLAB_PAT }}
+        run: |
+          git config --global user.name "CI Pipeline"
+          git config --global user.email "info@ilmenauer-schachverein.de"
+          git remote add gitlab "https://oauth2:${GITLAB_PAT}@gitlab.erik-skopp.de/ilmenauerschachverein/adventskalender.git"
+          git lfs install --local
+          git lfs fetch --all
+          git lfs push --all gitlab main
+          git push --force gitlab main
+          git push --force --tags gitlab
