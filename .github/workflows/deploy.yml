@@ -101,7 +101,7 @@ jobs:
         run: |
           git config --global user.name "CI Pipeline"
           git config --global user.email "info@ilmenauer-schachverein.de"
-          git remote add gitlab "https://oauth2:${GITLAB_PAT}@gitlab.erik-skopp.de/ilmenauerschachverein/vereinsmeisterschaft.git"
+          git remote add gitlab "https://oauth2:${GITLAB_PAT}@gitlab.erik-skopp.de/ilmenauerschachverein/turniere/vereinsmeisterschaft.git"
           git lfs install --local
           git lfs fetch --all
           git lfs push --all gitlab main
